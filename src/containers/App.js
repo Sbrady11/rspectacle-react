@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../images/logo.svg';
 import './App.css';
 import Cable from 'actioncable';
+import CodeInput from '../components/codeInput';
 
 class App extends Component {
   constructor(props) {
@@ -89,7 +90,6 @@ class App extends Component {
               Send
             </button>
           </div>
-
         </div>
       </div>
     );
