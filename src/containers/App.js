@@ -64,14 +64,19 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <div className="playground">
-          <div className="display" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em"}}>
-            <InputDisplay klass="rspec-display"/>
-            <InputDisplay klass="code-display"/>
+          <div className="display" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em" }}>
+            <InputDisplay class="rspec-display"/>
+            <InputDisplay class="code-display"/>
           </div>
 
-          <div className="entry" style={{ backgroundColor: "black", padding: "1em"}}>
-            <InputDisplay klass="rspec-display"/>
-            <InputDisplay klass="code-display"/>
+          <div className="entry" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em" }}>
+            <CodeInput class="rspec-input"/>
+            <CodeInput class="code-input"/>
+          </div>
+
+          <div className="output" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em"}}>
+            <CodeInput class="rspec-input"/>
+            <CodeInput class="code-input"/>
           </div>
 
         </div> { /* end of className='playground' */ }

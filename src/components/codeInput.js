@@ -17,15 +17,21 @@ class CodeInput extends React.Component {
 
   render(){
     return(
-      <input
-        onKeyPress={ (event) => this.handleCodeInputKeyPress(event) }
-        value={ this.state.codeInput }
-        onSubmit={ (event) => this.handleCodeInputOnSubmit(event) }
-        type='text'
-        placeholder='Enter your code...'
-        className='code-input' />
+      <div className={ this.props.class } style={{ backgroundColor: "orange", display: "inline-block", margin: "1em" }}>
+        <p>{ this.props.class }</p>
+        <textarea>
+        </textarea>
+      </div>
     )
   }
 }
 
 export default CodeInput;
+
+{/* <input
+  onKeyPress={ (event) => this.handleCodeInputKeyPress(event) }
+  value={ this.state.codeInput }
+  onSubmit={ (event) => this.handleCodeInputOnSubmit(event) }
+  type='text'
+  placeholder='Enter your code...'
+  className='code-input' /> */}
