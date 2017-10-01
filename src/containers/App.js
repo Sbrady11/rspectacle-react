@@ -2,17 +2,21 @@ import React, { Component } from 'react';
 import logo from '../images/logo.svg';
 import './App.css';
 import Cable from 'actioncable';
-import CodeInput from '../components/codeInput';
+import CodeInput from '../components/codeInput.js';
+import SubmitButton from '../components/submitButton.js';
+import InputDisplay from '../components/inputDisplay.js'
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentChatMessage: '',
-      chatLogs: []
+      chatLogs: [],
+      inputDisplay: ''
     };
+    this.handleSubmitButtonClick = this.handleSubmitButtonClick.bind(this);
   }
-  
+
   componentWillMount() {
     this.createSocket();
   }
@@ -47,15 +51,34 @@ class App extends Component {
     });
   }
 
+  handleSubmitButtonClick (string) {
+    this.setState({
+      inputDisplay: string
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
+        <div className="playground">
+          <div className="display" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em"}}>
+            <InputDisplay klass="rspec-display"/>
+            <InputDisplay klass="code-display"/>
+          </div>
+
+          <div className="entry" style={{ backgroundColor: "black", padding: "1em"}}>
+            <InputDisplay klass="rspec-display"/>
+            <InputDisplay klass="code-display"/>
+          </div>
+
+        </div> { /* end of className='playground' */ }
         <div className='playground'>
           <div className='code-display'>
             <h1>Code</h1>
+            <SubmitButton handleClick={ this.handleSubmitButtonClick } />
             <ul className='chat-logs'>
               { this.renderChatLog() }
             </ul>

@@ -9,9 +9,9 @@ class CodeInput extends React.Component {
   }
   handleCodeInputOnSubmit(event) {
     console.log(event)
-    this.setState({
-      codeInput: event.target.value;
-    })
+    // this.setState({
+    //   // codeInput: event.target.value;
+    // })
   }
 
 
