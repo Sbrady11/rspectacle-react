@@ -78,10 +78,11 @@ class App extends Component {
 
   handleRubyCodeSendEvent = (event) => {
     event.preventDefault();
+    const entered_code = document.querySelector('.implementation-input > textarea').value;
     this.setState({
-      rubyCode: document.querySelector('.implementation-input > textarea').value
+      rubyCode: entered_code
     });
-    this.playground.createRubyCode(document.getElementById('rspec-code-input').value);
+    this.playground.createRubyCode(entered_code);
   }
 }
 
