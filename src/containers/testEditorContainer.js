@@ -1,15 +1,25 @@
 import React from 'react';
-import InputDisplay from '../components/inputDisplay.js';
-import CodeEditor from '../components/codeEditor.js';
 import SubmitButton from '../components/submitButton.js';
 
 class TestEditorContainer extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.onKeyDown = this.onKeyDown.bind(this);
+  }
+  // event handler functions
+    // onKeyDown
+  onKeyDown(event) {
+    const updateRspecCode = this.props.updateRspecCode;
+    updateRspecCode(event);
+  }
   render() {
+    const { rspecCode, createRspecCode } = this.props;
     return (
-      <div className="display" style={{ backgroundColor: "black", display: "inline-block", padding: "1em", margin: "1em" }}>
-        <InputDisplay class="test-display"/>
-        <CodeEditor class="test-input" editor="Rspec" />
-        <SubmitButton />
+      <div className="display" style={{ display: "inline-block", padding: "1em", margin: "1em" }}>
+        <p>{ rspecCode }</p>
+        <textarea id='code-input' onKeyDown={this.onKeyDown}></textarea>
+        <SubmitButton onSubmit={ createRspecCode } content={ rspecCode } />
       </div>
     );
   }

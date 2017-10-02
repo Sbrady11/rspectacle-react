@@ -3,7 +3,6 @@ import logo from '../images/logo.svg';
 import './App.css';
 import Cable from 'actioncable';
 import TextEditorContainer from './textEditorContainer.js';
-
 import ConsoleOutput from '../components/consoleOutput.js';
 
 class App extends Component {
@@ -14,6 +13,10 @@ class App extends Component {
       rubyCode: '',
       testResult: ''
     };
+    this.createRspecCode = this.createRspecCode.bind(this);
+    this.createRubyCode = this.createRubyCode.bind(this);
+    this.updateRspecCode = this.updateRspecCode.bind(this);
+    this.updateRubyCode = this.updateRubyCode.bind(this);
   }
 
   componentWillMount() {
@@ -23,11 +26,12 @@ class App extends Component {
   createSocket() {
     // Change url to heroku backend server
     let cable = Cable.createConsumer('ws://localhost:3001/cable');
-    this.chats = cable.subscriptions.create({
+    this.codes = cable.subscriptions.create({
       channel: 'PlaygroundChannel'
     }, {
       connected: () => {},
       received: (data) => {
+        debugger;
         // Beware of data
         this.setState(data);
       },
@@ -45,7 +49,7 @@ class App extends Component {
       },
       runRspec: function() {
         // perform run_rspec from PlaygroundChannel
-        this.perform('run_rspec')
+        this.perform('run_rspec');
       }
     });
   }
@@ -64,21 +68,44 @@ class App extends Component {
           <img src={ logo } className="App-logo" alt="logo" />
         </header>
         <div className="playground">
-          <TextEditorContainer />
+          <TextEditorContainer
+            rspecCode={this.state.rspecCode}
+            rubyCode={this.state.rubyCode}
+            createRspecCode={this.createRspecCode}
+            createRubyCode={this.createRubyCode}
+            updateRspecCode={this.updateRspecCode}
+            updateRubyCode={this.updateRubyCode} />
           <ConsoleOutput />
         </div>
       </div>
     );
   }
+  // On Submit
+  createRspecCode(content) {
+    this.codes.createRspecCode(content);
+  }
+  createRubyCode(content) {
+    this.codes.createRubyCode(content);
+  }
 
   // update functions: setState()
     // update current rspecCode
-      // will display on test-display
+  updateRspecCode(event) {
+    event.preventDefault();
+    let rspecCode = this.state.rspecCode;
+    rspecCode += event.key;
+    this.setState({rspecCode: rspecCode});
+  }
     // update current rubyCode
-      // will display on code-display
+  updateRubyCode(event) {
+    event.preventDefault();
+    let rubyCode = this.state.rubyCode;
+    rubyCode += event.key;
+    this.setState({rubyCode: rubyCode});
+  }
+
     // update current testResult
       // will display on console
 }
 
 export default App;
-

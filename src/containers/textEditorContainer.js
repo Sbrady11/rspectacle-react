@@ -5,11 +5,23 @@ import RunButton from '../components/runButton.js';
 
 class TextEditorContainer extends React.Component {
   render() {
+    const { rspecCode,
+            rubyCode,
+            createRspecCode,
+            createRubyCode,
+            updateRspecCode, 
+            updateRubyCode } = this.props;
     return (
       <div id="textEditor-container">
-        <TestEditorContainer />
+        <TestEditorContainer
+          rspecCode={ rspecCode }
+          createRspecCode={ createRspecCode }
+          updateRspecCode={ updateRspecCode } />
         <RunButton />
-        <CodeEditorContainer />
+        <CodeEditorContainer
+          rubyCode={ rubyCode }
+          createRubyCode={ createRubyCode }
+          updateRubyCode={ updateRubyCode } />
       </div>
     );
   }
