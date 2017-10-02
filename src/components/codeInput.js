@@ -3,11 +3,8 @@ import React from 'react';
 class CodeInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      codeInput: '',
-    }
   }
-  
+
   render(){
     return(
       <div className={ this.props.class } style={{ backgroundColor: "orange", margin: "1em" }}>
