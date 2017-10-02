@@ -12,6 +12,8 @@ class App extends Component {
     this.state = {
       currentChatMessage: '',
       chatLogs: [],
+      currentTestBlock: '',
+      testLogs: [],
       inputDisplay: '',
       testDisplay: '',
       implementationDisplay: '',
@@ -40,6 +42,34 @@ class App extends Component {
           content: chatContent
         });
       }
+    });
+
+    let testCable = Cable.createConsumer('ws://localhost:3001/cable');
+    this.testLogs = cable.subscriptions.create({
+      channel: 'TestBlockChannel'
+    }, {
+      connected: () => {},
+      received: (data) => {
+        let testLogs = this.state.testLogs;
+        testLogs.push(data);
+        this.setState({ testLogs: testLogs });
+      },
+      create: function(testContent) {
+        debugger
+        this.perform('create', {
+          content: testContent
+        });
+      }
+    });
+  }
+
+  renderTestLog() {
+    return this.state.testLogs.map((block) => {
+      return (
+        <li key={`testContent_${block.id}`}>
+          <span className='test-block'>{ block.content }</span>
+        </li>
+      );
     });
   }
 
@@ -99,6 +129,20 @@ class App extends Component {
             <ul className='chat-logs'>
               { this.renderChatLog() }
             </ul>
+            <div>
+              <textarea
+              onKeyPress={ (e) => this.handleTestBlockInputKeyPress(e) }
+              value={ this.state.currentTestBlock }
+              onChange={ (e) => this.updateCurrentTestBlock(e) }
+              type='text'
+              placeholder='Enter your code...'
+              className='test-code-input'></textarea>
+              <button
+                onClick={ (e) => this.handleTestSendEvent(e) }
+                className='send'>
+                Send
+              </button>
+            </div>
             <input
               onKeyPress={ (e) => this.handleChatInputKeyPress(e) }
               value={ this.state.currentChatMessage }
@@ -122,13 +166,35 @@ class App extends Component {
     });
   }
 
+  updateCurrentTestBlock(event) {
+    debugger
+    this.setState({
+      currentTestBlock: event.target.value
+    });
+  }
+
   handleChatInputKeyPress(event) {
     if(event.key === 'Enter') {
       this.handleSendEvent(event);
     }//end if
   }
 
+  handleTestBlockInputKeyPress(event) {
+    if(event.key === 'Enter') {
+      this.handleSendEvent(event);
+    }//end if
+  }
+
+  handleTestSendEvent(event) {
+    event.preventDefault();
+    this.testLogs.create(this.state.currentTestBlock);
+    this.setState({
+      currentTestBlock: ''
+    });
+  }
+
   handleSendEvent(event) {
+    debugger
     event.preventDefault();
     this.chats.create(this.state.currentChatMessage);
     this.setState({
