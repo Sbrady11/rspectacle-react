@@ -14,7 +14,6 @@ class App extends Component {
       rspecCode: '',
       testResult: ''
     };
-    // this.handleSubmitButtonClick = this.handleSubmitButtonClick.bind(this);
   }
 
   componentWillMount() {
@@ -45,12 +44,6 @@ class App extends Component {
     });
   }
 
-  // handleSubmitButtonClick (string) {
-  //   this.setState({
-  //     inputDisplay: string
-  //   });
-  // }
-
   render() {
     return (
       <div className="App">
@@ -70,24 +63,12 @@ class App extends Component {
     );
   }
 
-  // updateRspecCode(event) {
-  //   const intermediateRspecCode = event.target.value;
-  //   // this.setState({
-  //   //   rspecCode: event.target.value
-  //   // });
-  // }
-
   handleRspecCodeSendEvent = (event) => {
     event.preventDefault();
     this.setState({
       rspecCode: document.getElementById('rspec-code-input').value
     });
-    // debugger
     this.playground.createRspecCode(document.getElementById('rspec-code-input').value);
-    // where to change
-    // this.setState({
-    //   rspecCode: ''
-    // });
   }
 }
 
