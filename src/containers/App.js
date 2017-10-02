@@ -55,7 +55,6 @@ class App extends Component {
         this.setState({ testLogs: testLogs });
       },
       create: function(testContent) {
-        debugger
         this.perform('create', {
           content: testContent
         });
@@ -97,7 +96,7 @@ class App extends Component {
           <img src={ logo } className="App-logo" alt="logo" />
         </header>
         <div className="playground">
-          <UserContainer text= { this.renderChatLog() }/>
+          <UserContainer text= { this.renderTestLog() }/>
 
           <div className="output" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em" }}>
             <ConsoleOutput />
@@ -167,7 +166,6 @@ class App extends Component {
   }
 
   updateCurrentTestBlock(event) {
-    debugger
     this.setState({
       currentTestBlock: event.target.value
     });
@@ -181,7 +179,7 @@ class App extends Component {
 
   handleTestBlockInputKeyPress(event) {
     if(event.key === 'Enter') {
-      this.handleSendEvent(event);
+      this.handleTestSendEvent(event);
     }//end if
   }
 
@@ -194,7 +192,6 @@ class App extends Component {
   }
 
   handleSendEvent(event) {
-    debugger
     event.preventDefault();
     this.chats.create(this.state.currentChatMessage);
     this.setState({
