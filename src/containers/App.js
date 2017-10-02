@@ -65,10 +65,15 @@ class App extends Component {
 
   handleRspecCodeSendEvent = (event) => {
     event.preventDefault();
+    // query DOM just once and use value twice
+    const entered_code = document.querySelector('.rspec-input > textarea').value;
     this.setState({
-      rspecCode: document.querySelector('.rspec-input > textarea').value
+      rspecCode: entered_code
     });
-    this.playground.createRspecCode(document.getElementById('rspec-code-input').value);
+
+    // using variable saved instead of state as state isn't updated immediately
+    // within the function
+    this.playground.createRspecCode(entered_code);
   }
 
   handleRubyCodeSendEvent = (event) => {
