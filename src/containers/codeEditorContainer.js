@@ -13,6 +13,7 @@ class CodeEditorContainer extends React.Component {
     const updateRubyCode = this.props.updateRubyCode;
     updateRubyCode(event);
   }
+  // rubyCode has to be formatted
   render() {
     const { rubyCode, createRubyCode } = this.props;
     return (

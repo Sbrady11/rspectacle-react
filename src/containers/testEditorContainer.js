@@ -13,6 +13,7 @@ class TestEditorContainer extends React.Component {
     const updateRspecCode = this.props.updateRspecCode;
     updateRspecCode(event);
   }
+  // rspecCode has to be formatted
   render() {
     const { rspecCode, createRspecCode } = this.props;
     return (
