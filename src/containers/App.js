@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../images/logo.svg';
 import './App.css';
 import Cable from 'actioncable';
-import UserContainer from './userContainer.js';
+import TextEditorContainer from './textEditorContainer.js';
 
 import ConsoleOutput from '../components/consoleOutput.js';
 
@@ -13,7 +13,7 @@ class App extends Component {
       rspecCode: '',
       rubyCode: '',
       testResult: '',
-      chatLogs: []
+      chatLogs: [] // Not gonna use it
     };
   }
 
@@ -74,7 +74,7 @@ class App extends Component {
           <img src={ logo } className="App-logo" alt="logo" />
         </header>
         <div className="playground">
-          <UserContainer />
+          <TextEditorContainer />
 
           <div className="output" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em" }}>
             <ConsoleOutput />
