@@ -17,7 +17,7 @@ class CodeInput extends React.Component {
 
   render(){
     return(
-      <div className={ this.props.class } style={{ backgroundColor: "orange", display: "inline-block", margin: "1em" }}>
+      <div className={ this.props.class } style={{ backgroundColor: "orange", margin: "1em" }}>
         <p>{ this.props.class }</p>
         <textarea>
         </textarea>

@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import logo from '../images/logo.svg';
 import './App.css';
 import Cable from 'actioncable';
-import CodeInput from '../components/codeInput.js';
-import SubmitButton from '../components/submitButton.js';
-import InputDisplay from '../components/inputDisplay.js'
+import TestContainer from './testContainer.js';
+import ImplementationContainer from './implementationContainer.js';
+import UserContainer from './userContainer.js';
+
+import ConsoleOutput from '../components/consoleOutput.js';
 
 class App extends Component {
   constructor(props) {
@@ -64,26 +66,17 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <div className="playground">
-          <div className="display" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em" }}>
-            <InputDisplay class="rspec-display"/>
-            <InputDisplay class="code-display"/>
-          </div>
-
-          <div className="entry" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em" }}>
-            <CodeInput class="rspec-input"/>
-            <CodeInput class="code-input"/>
-          </div>
+          <UserContainer />
 
           <div className="output" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em"}}>
-            <CodeInput class="rspec-input"/>
-            <CodeInput class="code-input"/>
+            <ConsoleOutput />
           </div>
 
         </div> { /* end of className='playground' */ }
         <div className='playground'>
           <div className='code-display'>
             <h1>Code</h1>
-            <SubmitButton handleClick={ this.handleSubmitButtonClick } />
+            { /* <SubmitButton handleClick={ this.handleSubmitButtonClick } /> */}
             <ul className='chat-logs'>
               { this.renderChatLog() }
             </ul>
