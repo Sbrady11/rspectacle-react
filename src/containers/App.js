@@ -36,7 +36,9 @@ class App extends Component {
         });
       },
       createRubyCode: function(rubyCode){
-
+        this.perform('create_ruby_code', {
+          rubyCode: rubyCode
+        });
       },
       runSpec: function(testResult){
 
