@@ -1,8 +1,8 @@
 import React from 'react';
 
 class RunButton extends React.Component {
-  // event handler functions
-    // RunButton onClick event
+  // event handler function
+    // onClick event
   render() {
     return(
       <button style={{ display: "inline-block" }}> RUN </button>

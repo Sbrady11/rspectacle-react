@@ -8,7 +8,7 @@ class CodeEditorContainer extends React.Component {
     return (
       <div className="display" style={{ backgroundColor: "black",  display: "inline-block", padding: "1em", margin: "1em" }}>
         <InputDisplay class="code-display"/>
-        <CodeEditor class="code-input"/>
+        <CodeEditor class="code-input" editor='Ruby'/>
         <SubmitButton />
       </div>
     );

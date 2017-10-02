@@ -5,6 +5,7 @@ class ConsoleOutput extends React.Component {
     return (
       <div style={{ backgroundColor: "pink", margin: "1em" }}>
         <p> CONSOLE OUTPUT </p>
+        <p>{/* testResult */}</p>
       </div>
     );
   }

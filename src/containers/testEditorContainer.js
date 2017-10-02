@@ -7,8 +7,8 @@ class TestEditorContainer extends React.Component {
   render() {
     return (
       <div className="display" style={{ backgroundColor: "black", display: "inline-block", padding: "1em", margin: "1em" }}>
-        <InputDisplay testLogs={ this.props.testLogs } class="test-display"/>
-        <CodeEditor class="test-input"/>
+        <InputDisplay class="test-display"/>
+        <CodeEditor class="test-input" editor="Rspec" />
         <SubmitButton />
       </div>
     );

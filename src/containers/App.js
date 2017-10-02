@@ -42,7 +42,6 @@ class App extends Component {
         this.perform('create_ruby_code', {
           content: rubyCodeContent
         });
-
       },
       runRspec: function() {
         // perform run_rspec from PlaygroundChannel
@@ -53,7 +52,9 @@ class App extends Component {
 
   // render functions
     // render rspecCode
+      // stretch: syntax highlighting
     // render rubyCode
+      // stretch: syntax highlighting
     // render testResult
 
   render() {

@@ -6,7 +6,7 @@ import RunButton from '../components/runButton.js';
 class TextEditorContainer extends React.Component {
   render() {
     return (
-      <div id="user-container">
+      <div id="textEditor-container">
         <TestEditorContainer />
         <RunButton />
         <CodeEditorContainer />
