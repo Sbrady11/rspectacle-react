@@ -5,11 +5,11 @@ class TestEditorContainer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.onKeyDown = this.onKeyDown.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
   // event handler functions
-    // onKeyDown
-  onKeyDown(event) {
+    // onChange
+  onChange(event) {
     const updateRspecCode = this.props.updateRspecCode;
     updateRspecCode(event);
   }
@@ -18,7 +18,7 @@ class TestEditorContainer extends React.Component {
     return (
       <div className="display" style={{ display: "inline-block", padding: "1em", margin: "1em" }}>
         <p>{ rspecCode }</p>
-        <textarea id='code-input' onKeyDown={this.onKeyDown}></textarea>
+        <textarea id='code-input' onChange={this.onChange}></textarea>
         <SubmitButton onSubmit={ createRspecCode } content={ rspecCode } />
       </div>
     );

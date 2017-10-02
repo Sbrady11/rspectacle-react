@@ -91,15 +91,13 @@ class App extends Component {
   // update current rspecCode
   updateRspecCode(event) {
     event.preventDefault();
-    let rspecCode = this.state.rspecCode;
-    rspecCode += event.key;
+    const rspecCode = event.target.value;
     this.setState({rspecCode: rspecCode});
   }
   // update current rubyCode
   updateRubyCode(event) {
     event.preventDefault();
-    let rubyCode = this.state.rubyCode;
-    rubyCode += event.key;
+    const rubyCode = event.target.value;
     this.setState({rubyCode: rubyCode});
   }
   // update current testResult
