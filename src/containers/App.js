@@ -66,7 +66,7 @@ class App extends Component {
   handleRspecCodeSendEvent = (event) => {
     event.preventDefault();
     this.setState({
-      rspecCode: document.getElementById('rspec-code-input').value
+      rspecCode: document.querySelector('.rspec-input > textarea').value
     });
     this.playground.createRspecCode(document.getElementById('rspec-code-input').value);
   }
