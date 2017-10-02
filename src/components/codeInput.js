@@ -31,11 +31,3 @@ class CodeInput extends React.Component {
 }
 
 export default CodeInput;
-
-{/* <input
-  onKeyPress={ (event) => this.handleCodeInputKeyPress(event) }
-  value={ this.state.codeInput }
-  onSubmit={ (event) => this.handleCodeInputOnSubmit(event) }
-  type='text'
-  placeholder='Enter your code...'
-  className='code-input' /> */}
