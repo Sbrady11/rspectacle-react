@@ -28,7 +28,13 @@ class App extends Component {
     }, {
       connected: () => {},
       received: (data) => {
-        this.setState({ rspecCode: data.rspec.content });
+        if (data.rspec !== undefined) {
+          this.setState({ rspecCode: data.rspec.content });
+        }
+
+        if (data.ruby !== undefined) {
+          this.setState({ rubyCode: data.ruby.content });
+        }
       },
       createRspecCode: function(rspecCode) {
         this.perform('create_rspec_code', {
@@ -36,7 +42,6 @@ class App extends Component {
         });
       },
       createRubyCode: function(rubyCode){
-        // debugger
         this.perform('create_ruby_code', {
           rubyCode: rubyCode
         });
