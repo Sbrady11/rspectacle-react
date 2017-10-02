@@ -70,6 +70,14 @@ class App extends Component {
     });
     this.playground.createRspecCode(document.getElementById('rspec-code-input').value);
   }
+
+  handleRubyCodeSendEvent = (event) => {
+    event.preventDefault();
+    this.setState({
+      rubyCode: document.querySelector('.implementation-input > textarea').value
+    });
+    this.playground.createRubyCode(document.getElementById('rspec-code-input').value);
+  }
 }
 
 export default App;
