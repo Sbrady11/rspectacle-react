@@ -96,7 +96,7 @@ class App extends Component {
           <img src={ logo } className="App-logo" alt="logo" />
         </header>
         <div className="playground">
-          <UserContainer text= { this.renderTestLog() }/>
+          <UserContainer testLogs= { this.renderTestLog() }/>
 
           <div className="output" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em" }}>
             <ConsoleOutput />

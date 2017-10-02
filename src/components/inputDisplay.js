@@ -5,7 +5,7 @@ class InputDisplay extends React.Component {
     return (
       <div className={ this.props.class } style={{ backgroundColor: "pink", margin: "1em" }}>
         <p>{ this.props.class }</p>
-        <div> { this.props.text } </div>
+        <div> { this.props.testLogs } </div>
       </div>
     );
   }

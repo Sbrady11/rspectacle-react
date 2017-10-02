@@ -7,7 +7,7 @@ class UserContainer extends React.Component {
   render() {
     return (
       <div id="user-container">
-        <TestContainer text= { this.props.text }/>
+        <TestContainer testLogs={ this.props.testLogs }/>
         <RunButton />
         <ImplementationContainer />
       </div>
