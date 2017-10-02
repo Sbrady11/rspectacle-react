@@ -14,7 +14,8 @@ class App extends Component {
       chatLogs: [],
       inputDisplay: '',
       testDisplay: '',
-      implementationDisplay: ''
+      implementationDisplay: '',
+      test: 'test'
     };
     this.handleSubmitButtonClick = this.handleSubmitButtonClick.bind(this);
   }
@@ -66,7 +67,7 @@ class App extends Component {
           <img src={ logo } className="App-logo" alt="logo" />
         </header>
         <div className="playground">
-          <UserContainer />
+          <UserContainer text= { this.renderChatLog() }/>
 
           <div className="output" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em" }}>
             <ConsoleOutput />
