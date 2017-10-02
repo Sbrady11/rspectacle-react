@@ -12,7 +12,7 @@ class CodeInput extends React.Component {
         <textarea
           type='text'
           id='rspec-code-input'
-          placeholder='Enter your Rspec code...'
+          placeholder={ this.props.placholder }
           className='test-code-input'>
         </textarea>
       </div>

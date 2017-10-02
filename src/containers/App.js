@@ -36,6 +36,7 @@ class App extends Component {
         });
       },
       createRubyCode: function(rubyCode){
+        // debugger
         this.perform('create_ruby_code', {
           rubyCode: rubyCode
         });
@@ -55,7 +56,9 @@ class App extends Component {
         <div className="playground">
           <UserContainer
             rspecCode={ this.state.rspecCode }
-            handleRspecCodeSubmit={ this.handleRspecCodeSendEvent }/>
+            rubyCode={ this.state.rubyCode }
+            handleRspecCodeSubmit={ this.handleRspecCodeSendEvent }
+            handleRubyCodeSubmit={ this.handleRubyCodeSendEvent }/>
 
           <div className="output" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em" }}>
             <ConsoleOutput />

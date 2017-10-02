@@ -8,10 +8,12 @@ class UserContainer extends React.Component {
     return (
       <div id="user-container">
         <TestContainer
-          handleRspecCodeSubmit={ this.props.handleRspecCodeSubmit }
+          handleCodeSubmit={ this.props.handleRspecCodeSubmit }
           code={ this.props.rspecCode }/>
         <RunButton />
-        <ImplementationContainer />
+        <ImplementationContainer
+          handleCodeSubmit={ this.props.handleRubyCodeSubmit }
+          code={ this.props.rubyCode }/>
       </div>
     );
   }
