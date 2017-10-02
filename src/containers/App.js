@@ -28,15 +28,9 @@ class App extends Component {
     }, {
       connected: () => {},
       received: (data) => {
-        let chatLogs = this.state.chatLogs;
-        chatLogs.push(data);
-        this.setState({ chatLogs: chatLogs });
+        // Beware of data
+        this.setState(data);
       },
-      // create: function(chatContent) {
-      //   this.perform('create', {
-      //     content: chatContent
-      //   });
-      // }
       createRspecCode: function(rspecCodeContent) {
         // perform create_rspec_code from PlaygroundChannel
         this.perform('create_rspec_code', {
