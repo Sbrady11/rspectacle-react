@@ -7,8 +7,7 @@ class SubmitButton extends React.Component {
       <div>
       <button onClick={ this.props.handleClick }> SUBMIT </button>
       <button
-        handleRspecCodeSubmit={ this.props.handleRspecCodeSubmit }
-        onClick={ (e) => this.props.handleRspecCodeSubmit(e) }
+        onClick={ this.props.handleRspecCodeSubmit }
         className='send'>
         Send
       </button>

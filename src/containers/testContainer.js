@@ -8,7 +8,6 @@ class TestContainer extends React.Component {
     return (
       <div className="display" style={{ backgroundColor: "black", display: "inline-block", padding: "1em", margin: "1em" }}>
         <InputDisplay content={ this.props.testCode } class="rspec-display"/>
-        <InputDisplay content={ this.props.testLogs } class="testLogs-display"/>
         <CodeInput class="rspec-input"/>
         <SubmitButton handleRspecCodeSubmit={ this.props.handleRspecCodeSubmit }/>
       </div>
