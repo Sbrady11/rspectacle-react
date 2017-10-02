@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import logo from '../images/logo.svg';
 import './App.css';
 import Cable from 'actioncable';
-import TestContainer from './testContainer.js';
-import ImplementationContainer from './implementationContainer.js';
 import UserContainer from './userContainer.js';
 
 import ConsoleOutput from '../components/consoleOutput.js';
@@ -14,7 +12,9 @@ class App extends Component {
     this.state = {
       currentChatMessage: '',
       chatLogs: [],
-      inputDisplay: ''
+      inputDisplay: '',
+      testDisplay: '',
+      implementationDisplay: ''
     };
     this.handleSubmitButtonClick = this.handleSubmitButtonClick.bind(this);
   }
@@ -63,12 +63,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={ logo } className="App-logo" alt="logo" />
         </header>
         <div className="playground">
           <UserContainer />
 
-          <div className="output" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em"}}>
+          <div className="output" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em" }}>
             <ConsoleOutput />
           </div>
 
