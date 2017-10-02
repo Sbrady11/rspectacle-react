@@ -19,7 +19,7 @@ class App extends Component {
       implementationDisplay: '',
       test: 'test'
     };
-    this.handleSubmitButtonClick = this.handleSubmitButtonClick.bind(this);
+    // this.handleSubmitButtonClick = this.handleSubmitButtonClick.bind(this);
   }
 
   componentWillMount() {
@@ -83,11 +83,11 @@ class App extends Component {
     });
   }
 
-  handleSubmitButtonClick (string) {
-    this.setState({
-      inputDisplay: string
-    });
-  }
+  // handleSubmitButtonClick (string) {
+  //   this.setState({
+  //     inputDisplay: string
+  //   });
+  // }
 
   render() {
     return (
