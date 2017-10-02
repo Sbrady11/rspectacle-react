@@ -10,16 +10,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentChatMessage: '',
-      chatLogs: [],
-      currentTestBlock: '',
-      testLogs: [],
-      inputDisplay: '',
-      testDisplay: '',
-      implementationDisplay: '',
-      test: 'test'
+      rspecCode: '',
+      rubyCode: '',
+      testResult: '',
+      chatLogs: []
     };
-    // this.handleSubmitButtonClick = this.handleSubmitButtonClick.bind(this);
   }
 
   componentWillMount() {
@@ -29,7 +24,7 @@ class App extends Component {
   createSocket() {
     let cable = Cable.createConsumer('ws://localhost:3001/cable');
     this.chats = cable.subscriptions.create({
-      channel: 'ChatChannel'
+      channel: 'PlaygroundChannel'
     }, {
       connected: () => {},
       received: (data) => {
@@ -37,41 +32,30 @@ class App extends Component {
         chatLogs.push(data);
         this.setState({ chatLogs: chatLogs });
       },
-      create: function(chatContent) {
-        this.perform('create', {
-          content: chatContent
+      // create: function(chatContent) {
+      //   this.perform('create', {
+      //     content: chatContent
+      //   });
+      // }
+      createRspecCode: function(rspecCodeContent) {
+        // perform create_rspec_code from PlaygroundChannel
+        this.perform('create_rspec_code', {
+          content: rspecCodeContent
         });
-      }
-    });
-
-    let testCable = Cable.createConsumer('ws://localhost:3001/cable');
-    this.testLogs = cable.subscriptions.create({
-      channel: 'TestBlockChannel'
-    }, {
-      connected: () => {},
-      received: (data) => {
-        let testLogs = this.state.testLogs;
-        testLogs.push(data);
-        this.setState({ testLogs: testLogs });
       },
-      create: function(testContent) {
-        this.perform('create', {
-          content: testContent
+      createRubyCode: function(rubyCodeContent) {
+        // perform create_ruby_code from PlaygroundChannel
+        this.perform('create_ruby_code', {
+          content: rubyCodeContent
         });
+
+      },
+      runRspec: function() {
+        // perform run_rspec from PlaygroundChannel
+        this.perform('run_rspec')
       }
     });
   }
-
-  renderTestLog() {
-    return this.state.testLogs.map((block) => {
-      return (
-        <li key={`testContent_${block.id}`}>
-          <span className='test-block'>{ block.content }</span>
-        </li>
-      );
-    });
-  }
-
   renderChatLog() {
     return this.state.chatLogs.map((el) => {
       return (
@@ -96,7 +80,7 @@ class App extends Component {
           <img src={ logo } className="App-logo" alt="logo" />
         </header>
         <div className="playground">
-          <UserContainer testLogs= { this.renderTestLog() }/>
+          <UserContainer />
 
           <div className="output" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em" }}>
             <ConsoleOutput />
@@ -165,30 +149,10 @@ class App extends Component {
     });
   }
 
-  updateCurrentTestBlock(event) {
-    this.setState({
-      currentTestBlock: event.target.value
-    });
-  }
-
   handleChatInputKeyPress(event) {
     if(event.key === 'Enter') {
       this.handleSendEvent(event);
     }//end if
-  }
-
-  handleTestBlockInputKeyPress(event) {
-    if(event.key === 'Enter') {
-      this.handleTestSendEvent(event);
-    }//end if
-  }
-
-  handleTestSendEvent(event) {
-    event.preventDefault();
-    this.testLogs.create(this.state.currentTestBlock);
-    this.setState({
-      currentTestBlock: ''
-    });
   }
 
   handleSendEvent(event) {
