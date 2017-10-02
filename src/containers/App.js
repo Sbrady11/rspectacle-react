@@ -17,7 +17,9 @@ class App extends Component {
       inputDisplay: '',
       testDisplay: '',
       implementationDisplay: '',
-      test: 'test'
+      rubyCode: '',
+      rspecCode: '',
+      testResult: ''
     };
     // this.handleSubmitButtonClick = this.handleSubmitButtonClick.bind(this);
   }
@@ -27,7 +29,7 @@ class App extends Component {
   }
 
   createSocket() {
-    let cable = Cable.createConsumer('ws://localhost:3001/cable');
+    let cable = Cable.createConsumer('ws://localhost:3002/cable');
     this.chats = cable.subscriptions.create({
       channel: 'ChatChannel'
     }, {
@@ -44,11 +46,28 @@ class App extends Component {
       }
     });
 
-    let testCable = Cable.createConsumer('ws://localhost:3001/cable');
+    let testCable = Cable.createConsumer('ws://localhost:3002/cable');
     this.testLogs = cable.subscriptions.create({
       channel: 'TestBlockChannel'
     }, {
       connected: () => {},
+      received: (data) => {
+        let testLogs = this.state.testLogs;
+        testLogs.push(data);
+        this.setState({ testLogs: testLogs });
+      },
+      create: function(testContent) {
+        this.perform('create', {
+          content: testContent
+        });
+      }
+    });
+
+    let playgroundCable = Cable.createConsumer('ws://localhost:3001/cable');
+    this.playgroundLogs = cable.subscriptions.create({
+      channel: 'PlaygroundChannel'
+    }, {
+      connected: () => { console.log('connected') },
       received: (data) => {
         let testLogs = this.state.testLogs;
         testLogs.push(data);
