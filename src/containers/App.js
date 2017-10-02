@@ -88,7 +88,6 @@ class App extends Component {
   createRubyCode(content) {
     this.codes.createRubyCode(content);
   }
-
   // update current rspecCode
   updateRspecCode(event) {
     event.preventDefault();

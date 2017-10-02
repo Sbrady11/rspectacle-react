@@ -9,7 +9,7 @@ class SubmitButton extends React.Component {
     // Button onClick event
   handleSubmit(event) {
     event.preventDefault();
-    const { onSubmit, rspecCode, content } = this.props;
+    const { onSubmit, content } = this.props;
     onSubmit(content);
   }
   render () {
