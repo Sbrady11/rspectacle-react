@@ -21,6 +21,7 @@ class App extends Component {
   }
 
   createSocket() {
+    // Change url to heroku backend server
     let cable = Cable.createConsumer('ws://localhost:3001/cable');
     this.chats = cable.subscriptions.create({
       channel: 'PlaygroundChannel'
@@ -49,6 +50,12 @@ class App extends Component {
       }
     });
   }
+
+  // render functions
+    // render rspecCode
+    // render rubyCode
+    // render testResult
+
   render() {
     return (
       <div className="App">
@@ -57,14 +64,26 @@ class App extends Component {
         </header>
         <div className="playground">
           <TextEditorContainer />
-
-          <div className="output" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em" }}>
-            <ConsoleOutput />
-          </div>
+          <ConsoleOutput />
         </div>
       </div>
     );
   }
+
+  // update functions
+    // update current rspecCode
+      // will display on test-display
+    // update current rubyCode
+      // will display on code-display
+    // update current testResult
+      // will display on console
+
+  // event handler functions
+    // Editor(textarea) - enbale tab to add 2 spaces
+    // TestEditor Button onClick event
+    // CodeEditor Button onClick event
+    // RunButton onClick event
+
 }
 
 export default App;
