@@ -47,7 +47,7 @@ class App extends Component {
     });
 
     let testCable = Cable.createConsumer('ws://localhost:3002/cable');
-    this.testLogs = cable.subscriptions.create({
+    this.testLogs = testCable.subscriptions.create({
       channel: 'TestBlockChannel'
     }, {
       connected: () => {},
@@ -64,30 +64,28 @@ class App extends Component {
     });
 
     let playgroundCable = Cable.createConsumer('ws://localhost:3001/cable');
-    this.playgroundLogs = cable.subscriptions.create({
+    const { rubyCode, rspecCode, testResult } = this.state;
+    this.playground = playgroundCable.subscriptions.create({
       channel: 'PlaygroundChannel'
     }, {
-      connected: () => { console.log('connected') },
+      connected: () => {},
       received: (data) => {
-        let testLogs = this.state.testLogs;
-        testLogs.push(data);
-        this.setState({ testLogs: testLogs });
-      },
-      create: function(testContent) {
-        this.perform('create', {
-          content: testContent
-        });
-      }
-    });
-  }
+        debugger
 
-  renderTestLog() {
-    return this.state.testLogs.map((block) => {
-      return (
-        <li key={`testContent_${block.id}`}>
-          <span className='test-block'>{ block.content }</span>
-        </li>
-      );
+        this.setState({ rspecCode: data.rspec.content });
+        this.renderRspecCode();
+      },
+      createRspecCode: function(rspecCode) {
+        this.perform('create_rspec_code', {
+          rspecCode: rspecCode
+        });
+      },
+      createRubyCode: function(rubyCode){
+
+      },
+      runSpec: function(testResult){
+
+      }
     });
   }
 
@@ -102,6 +100,21 @@ class App extends Component {
     });
   }
 
+  renderTestLog() {
+    return this.state.testLogs.map((block) => {
+      return (
+        <li key={`testContent_${block.id}`}>
+          <span className='test-block'>{ block.content }</span>
+        </li>
+      );
+    });
+  }
+
+  renderRspecCode() {
+      return (
+          <span className='test-block'>{ this.state.rspecCode }</span>
+      );
+  }
   // handleSubmitButtonClick (string) {
   //   this.setState({
   //     inputDisplay: string
@@ -115,7 +128,10 @@ class App extends Component {
           <img src={ logo } className="App-logo" alt="logo" />
         </header>
         <div className="playground">
-          <UserContainer testLogs= { this.renderTestLog() }/>
+          <UserContainer
+            rspecCode={ this.state.rspecCode }
+            testLogs={ this.renderTestLog() }
+            handleRspecCodeSubmit={ this.handleRspecCodeSendEvent }/>
 
           <div className="output" style={{ backgroundColor: "black", padding: "1em", margin: "1em 0em" }}>
             <ConsoleOutput />
@@ -149,14 +165,26 @@ class App extends Component {
             </ul>
             <div>
               <textarea
-              onKeyPress={ (e) => this.handleTestBlockInputKeyPress(e) }
+              onKeyPress={ this.handleTestBlockInputKeyPress }
               value={ this.state.currentTestBlock }
               onChange={ (e) => this.updateCurrentTestBlock(e) }
               type='text'
               placeholder='Enter your code...'
               className='test-code-input'></textarea>
               <button
-                onClick={ (e) => this.handleTestSendEvent(e) }
+                onClick={ this.handleTestSendEvent }
+                className='send'>
+                Send
+              </button>
+            </div>
+            <div>
+              <textarea
+              type='text'
+              id='rspec-code-input'
+              placeholder='Enter your Rspec code...'
+              className='test-code-input'></textarea>
+              <button
+                onClick={ (e) => this.handleRspecCodeSendEvent(e) }
                 className='send'>
                 Send
               </button>
@@ -190,6 +218,13 @@ class App extends Component {
     });
   }
 
+  // updateRspecCode(event) {
+  //   const intermediateRspecCode = event.target.value;
+  //   // this.setState({
+  //   //   rspecCode: event.target.value
+  //   // });
+  // }
+
   handleChatInputKeyPress(event) {
     if(event.key === 'Enter') {
       this.handleSendEvent(event);
@@ -202,12 +237,10 @@ class App extends Component {
     }//end if
   }
 
-  handleTestSendEvent(event) {
-    event.preventDefault();
-    this.testLogs.create(this.state.currentTestBlock);
-    this.setState({
-      currentTestBlock: ''
-    });
+  handleRspecCodeInputKeyPress = (event) => {
+    if(event.key === 'Enter') {
+      this.handleRspecCodeSendEvent(event);
+    }//end if
   }
 
   handleSendEvent(event) {
@@ -216,6 +249,27 @@ class App extends Component {
     this.setState({
       currentChatMessage: ''
     });
+  }
+
+  handleTestSendEvent(event) {
+    event.preventDefault();
+    this.testLogs.create(this.state.currentTestBlock);
+    this.setState({
+      currentTestBlock: ''
+    });
+  }
+
+  handleRspecCodeSendEvent = (event) => {
+    event.preventDefault();
+    this.setState({
+      rspecCode: document.getElementById('rspec-code-input').value
+    });
+    // debugger
+    this.playground.createRspecCode(document.getElementById('rspec-code-input').value);
+    // where to change
+    // this.setState({
+    //   rspecCode: ''
+    // });
   }
 }
 

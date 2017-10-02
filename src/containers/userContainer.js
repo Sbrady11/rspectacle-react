@@ -7,7 +7,10 @@ class UserContainer extends React.Component {
   render() {
     return (
       <div id="user-container">
-        <TestContainer testLogs={ this.props.testLogs }/>
+        <TestContainer
+          handleRspecCodeSubmit={ this.props.handleRspecCodeSubmit }
+          testCode={ this.props.rspecCode }
+          testLogs={ this.props.testLogs }/>
         <RunButton />
         <ImplementationContainer />
       </div>

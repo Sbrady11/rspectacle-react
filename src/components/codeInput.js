@@ -19,7 +19,11 @@ class CodeInput extends React.Component {
     return(
       <div className={ this.props.class } style={{ backgroundColor: "orange", margin: "1em" }}>
         <p>{ this.props.class }</p>
-        <textarea>
+        <textarea
+          type='text'
+          id='rspec-code-input'
+          placeholder='Enter your Rspec code...'
+          className='test-code-input'>
         </textarea>
       </div>
     )
