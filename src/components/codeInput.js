@@ -7,14 +7,7 @@ class CodeInput extends React.Component {
       codeInput: '',
     }
   }
-  handleCodeInputOnSubmit(event) {
-    console.log(event)
-    // this.setState({
-    //   // codeInput: event.target.value;
-    // })
-  }
-
-
+  
   render(){
     return(
       <div className={ this.props.class } style={{ backgroundColor: "orange", margin: "1em" }}>
