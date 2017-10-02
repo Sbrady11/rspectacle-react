@@ -13,10 +13,12 @@ class App extends Component {
       rubyCode: '',
       testResult: ''
     };
+    // Bind 'this' to App
     this.createRspecCode = this.createRspecCode.bind(this);
     this.createRubyCode = this.createRubyCode.bind(this);
     this.updateRspecCode = this.updateRspecCode.bind(this);
     this.updateRubyCode = this.updateRubyCode.bind(this);
+    this.updateTestResult = this.updateTestResult.bind(this);
   }
 
   componentWillMount() {
@@ -31,8 +33,6 @@ class App extends Component {
     }, {
       connected: () => {},
       received: (data) => {
-        debugger;
-        // Beware of data
         this.setState(data);
       },
       createRspecCode: function(rspecCodeContent) {
@@ -74,8 +74,9 @@ class App extends Component {
             createRspecCode={this.createRspecCode}
             createRubyCode={this.createRubyCode}
             updateRspecCode={this.updateRspecCode}
-            updateRubyCode={this.updateRubyCode} />
-          <ConsoleOutput />
+            updateRubyCode={this.updateRubyCode}
+            updateTestResult={this.updateTestResult} />
+          <ConsoleOutput testResult={this.state.testResult} />
         </div>
       </div>
     );
@@ -88,24 +89,24 @@ class App extends Component {
     this.codes.createRubyCode(content);
   }
 
-  // update functions: setState()
-    // update current rspecCode
+  // update current rspecCode
   updateRspecCode(event) {
     event.preventDefault();
     let rspecCode = this.state.rspecCode;
     rspecCode += event.key;
     this.setState({rspecCode: rspecCode});
   }
-    // update current rubyCode
+  // update current rubyCode
   updateRubyCode(event) {
     event.preventDefault();
     let rubyCode = this.state.rubyCode;
     rubyCode += event.key;
     this.setState({rubyCode: rubyCode});
   }
-
-    // update current testResult
-      // will display on console
+  // update current testResult
+  updateTestResult() {
+    this.codes.runRspec();
+  }
 }
 
 export default App;
