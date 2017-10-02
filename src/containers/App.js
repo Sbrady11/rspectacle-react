@@ -70,20 +70,13 @@ class App extends Component {
     );
   }
 
-  // update functions
+  // update functions: setState()
     // update current rspecCode
       // will display on test-display
     // update current rubyCode
       // will display on code-display
     // update current testResult
       // will display on console
-
-  // event handler functions
-    // Editor(textarea) - enbale tab to add 2 spaces
-    // TestEditor Button onClick event
-    // CodeEditor Button onClick event
-    // RunButton onClick event
-
 }
 
 export default App;
