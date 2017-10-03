@@ -17,7 +17,7 @@ class CodeEditorContainer extends React.Component {
   handleTab(event) {
     if(event.keyCode === 9) {
       event.preventDefault();
-      event.target.value += '  ';
+      event.target.value += '\t';
     }
   }
   // rubyCode has to be formatted
