@@ -57,12 +57,6 @@ class App extends Component {
     });
   }
 
-  // render functions
-    // render rspecCode
-      // stretch: syntax highlighting
-    // render rubyCode
-      // stretch: syntax highlighting
-    // render testResult
   render() {
     const {welcomeScreenVis} = this.state;
     return (
