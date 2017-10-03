@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       rspecCode: '',
       rubyCode: '',
-      testResult: ''
+      testResult: '{}'
     };
     // Bind 'this' to App
     this.createRspecCode = this.createRspecCode.bind(this);
@@ -55,12 +55,6 @@ class App extends Component {
     });
   }
 
-  // render functions
-    // render rspecCode
-      // stretch: syntax highlighting
-    // render rubyCode
-      // stretch: syntax highlighting
-    // render testResult
   render() {
     return (
       <div className="App">
