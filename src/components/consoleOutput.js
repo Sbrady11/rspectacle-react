@@ -2,13 +2,11 @@ import React from 'react';
 
 class ConsoleOutput extends React.Component {
   render() {
-    const { testResult } = this.props;
-    const data = JSON.parse(testResult);
-    const { examples, summary, summary_line } = data;
+    const { testResult } = this.props
     return (
       <div className='consoleOutput' >
-        <p> > CONSOLE OUTPUT </p>
-        <p>{ summary_line }</p>
+        <p>> CONSOLE OUTPUT </p>
+        <p>{ testResult }</p>
       </div>
     );
   }
