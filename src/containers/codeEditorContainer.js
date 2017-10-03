@@ -13,13 +13,23 @@ class CodeEditorContainer extends React.Component {
     const updateRubyCode = this.props.updateRubyCode;
     updateRubyCode(event);
   }
+  // tab??
+  handleTab(event) {
+    if(event.keyCode === 9) {
+      event.preventDefault();
+      event.target.value += '\t';
+    }
+  }
   // rubyCode has to be formatted
   render() {
     const { rubyCode, createRubyCode } = this.props;
     return (
       <div className="display" style={{ display: "inline-block", padding: "1em", margin: "1em" }}>
         <p>{ rubyCode }</p>
-        <textarea id='code-input' onChange={this.onChange}></textarea>
+        <textarea
+          id='code-input'
+          onChange={this.onChange}
+          onKeyDown={this.handleTab}>{ rubyCode }</textarea>
         <SubmitButton onSubmit={ createRubyCode } content={ rubyCode }/>
       </div>
     );
