@@ -13,13 +13,24 @@ class TestEditorContainer extends React.Component {
     const updateRspecCode = this.props.updateRspecCode;
     updateRspecCode(event);
   }
+  // tab??
+  handleTab(event) {
+    if(event.keyCode === 9) {
+      event.preventDefault();
+      event.target.value += '  ';
+    }
+  }
+
   // rspecCode has to be formatted
   render() {
     const { rspecCode, createRspecCode } = this.props;
     return (
       <div className="display" style={{ display: "inline-block", padding: "1em", margin: "1em" }}>
         <p>{ rspecCode }</p>
-        <textarea id='code-input' onChange={this.onChange}></textarea>
+        <textarea
+          onKeyDown={this.handleTab}
+          id='code-input'
+          onChange={this.onChange}>{ rspecCode }</textarea>
         <SubmitButton onSubmit={ createRspecCode } content={ rspecCode } />
       </div>
     );
