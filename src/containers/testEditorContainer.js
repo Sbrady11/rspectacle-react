@@ -25,7 +25,7 @@ class TestEditorContainer extends React.Component {
   render() {
     const { rspecCode, createRspecCode } = this.props;
     return (
-      <div className="display" style={{ display: "inline-block", padding: "1em", margin: "1em" }}>
+      <div className="display" style={{ border: 'medium', display: "inline-block", padding: "1em", margin: "1em" }}>
         <p>{ rspecCode }</p>
         <textarea
           onKeyDown={this.handleTab}

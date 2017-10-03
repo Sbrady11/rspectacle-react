@@ -1,5 +1,6 @@
 .App {
     text-align: center;
+    font-family: 'Source Code Pro', monospace, light;
 }
 
 .App-logo {
@@ -17,4 +18,48 @@
 
 .App-intro {
     font-size: large;
+}
+
+.display {
+    border: inset;
+    background: #1C1C1C;
+    color: green;
+}
+
+.consoleOutput {
+    border: inset;
+    background-color: #1C1C1C;
+    color: green
+}
+
+.playground {
+    background-color: #C29979;
+}
+
+body {
+    background-color: #F2D398;
+}
+
+button {
+    font-family: 'Source Code Pro', monospace, light;
+    padding: 7px 13px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0 4px #999;
+}
+
+button:hover {
+    background-color: #3e8e41
+}
+
+button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
