@@ -75,6 +75,10 @@ textarea {
     background-attachment: local;
     background-repeat: no-repeat;
     padding-left: 35px;
-    padding-top: 10px;
+    padding-top: 11px;
+    font-size: 12px;
     border-color: #ccc;
+    color: green;
+    width: 500px;
+    height: 700px;
 }
