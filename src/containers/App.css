@@ -63,3 +63,9 @@ button:active {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+
+.welcomeText {
+    border-radius: 25px;
+    background: #1C1C1C;
+    color: green;
+}

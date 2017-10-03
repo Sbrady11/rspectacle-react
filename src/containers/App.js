@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import SkyLight from 'react-skylight';
+import ReactDOM from 'react-dom';
 import logo from '../images/logo.svg';
 import './App.css';
 import Cable from 'actioncable';
 import TextEditorContainer from './textEditorContainer.js';
 import ConsoleOutput from '../components/consoleOutput.js';
+import WelcomeScreen from '../components/welcomeScreen.js';
 
 class App extends Component {
   constructor(props) {
@@ -60,13 +63,14 @@ class App extends Component {
     // render rubyCode
       // stretch: syntax highlighting
     // render testResult
-
   render() {
+    const {welcomeScreenVis} = this.state;
     return (
       <div className="App">
         <header className="App-header">
           <img src={ logo } className="App-logo" alt="logo" />
         </header>
+        <WelcomeScreen />
         <div className="playground">
           <TextEditorContainer
             rspecCode={this.state.rspecCode}
