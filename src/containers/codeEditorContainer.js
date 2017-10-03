@@ -25,7 +25,6 @@ class CodeEditorContainer extends React.Component {
     const { rubyCode, createRubyCode } = this.props;
     return (
       <div className="display" style={{ border: 'medium', display: "inline-block", padding: "1em", margin: "1em" }}>
-        <p>{ rubyCode }</p>
         <textarea
           id='code-input'
           onChange={this.onChange}
