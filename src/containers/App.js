@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import SkyLight from 'react-skylight';
-import ReactDOM from 'react-dom';
 import logo from '../images/logo.svg';
 import './App.css';
 import Cable from 'actioncable';
@@ -64,7 +62,6 @@ class App extends Component {
       // stretch: syntax highlighting
     // render testResult
   render() {
-    const {welcomeScreenVis} = this.state;
     return (
       <div className="App">
         <header className="App-header">
