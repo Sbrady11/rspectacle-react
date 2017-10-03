@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       rspecCode: '',
       rubyCode: '',
-      testResult: ''
+      testResult: '{}'
     };
     // Bind 'this' to App
     this.createRspecCode = this.createRspecCode.bind(this);
