@@ -9,7 +9,7 @@ class WelcomeScreen extends React.Component {
           <button onClick={() => this.simpleDialog.show()}>ABOUT</button>
         </section>
         <SkyLight hideOnOverlayClicked ref={ref => this.simpleDialog = ref} title="Welcome to Rspectacle!">
-          Using Rails` ActionCable and ReactJS, you can write and test Ruby Code between more than one user in real time!              
+          Here you can write and test Ruby Code between more than one user in real time!              
 
           Grab a pal, write some rspec tests, and learn to love TDD<br></br>
         </SkyLight>
