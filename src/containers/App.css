@@ -24,6 +24,12 @@
     border: inset;
     background: #1C1C1C;
     color: green;
+    height: 350px;
+    width: 300px;
+}
+
+#codeinput {
+    maxlength: 199px;
 }
 
 .consoleOutput {
@@ -62,4 +68,9 @@ button:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+}
+
+p {
+    overflow-wrap: break-word;
+    max-width: 50ch;
 }
