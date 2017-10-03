@@ -8,7 +8,6 @@ class SubmitButton extends React.Component {
         // event handler function
         // Button onClick event
     handleSubmit(event) {
-        alert("Code Recieved and Saved, Trust us ;)");
         event.preventDefault();
         const { onSubmit, content } = this.props;
         onSubmit(content);
