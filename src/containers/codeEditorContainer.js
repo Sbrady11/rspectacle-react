@@ -25,10 +25,13 @@ class CodeEditorContainer extends React.Component {
     const { rubyCode, createRubyCode } = this.props;
     return (
       <div className="display" style={{ border: 'medium', display: "inline-block", padding: "1em", margin: "1em" }}>
-        <textarea
-          id='code-input'
-          onChange={this.onChange}
-          onKeyDown={this.handleTab}>{ rubyCode }</textarea>
+        <h2 className="editor"> Code </h2>
+        <div>
+          <textarea
+            id='code-input'
+            onChange={this.onChange}
+            onKeyDown={this.handleTab}>{ rubyCode }</textarea>
+        </div>
         <SubmitButton onSubmit={ createRubyCode } content={ rubyCode }/>
       </div>
     );
