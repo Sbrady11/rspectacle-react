@@ -26,11 +26,13 @@ class TestEditorContainer extends React.Component {
     const { rspecCode, createRspecCode } = this.props;
     return (
       <div className="display" style={{ border: 'medium', display: "inline-block", padding: "1em", margin: "1em" }}>
-        <p>{ rspecCode }</p>
-        <textarea
-          onKeyDown={this.handleTab}
-          id='code-input'
-          onChange={this.onChange}>{ rspecCode }</textarea>
+        <h2 className="editor">Test</h2>
+        <div>
+          <textarea
+            onKeyDown={this.handleTab}
+            id='spec-input'
+            onChange={this.onChange}>{ rspecCode }</textarea>
+        </div>
         <SubmitButton onSubmit={ createRspecCode } content={ rspecCode } />
       </div>
     );

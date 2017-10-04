@@ -69,3 +69,16 @@ button:active {
     background: #1C1C1C;
     color: green;
 }
+
+textarea {
+    background: url(http://i.imgur.com/2cOaJ.png);
+    background-attachment: local;
+    background-repeat: no-repeat;
+    padding-left: 35px;
+    padding-top: 11px;
+    font-size: 12px;
+    border-color: #ccc;
+    color: green;
+    width: 500px;
+    height: 700px;
+}
