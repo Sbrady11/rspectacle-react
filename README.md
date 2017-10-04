@@ -1,8 +1,13 @@
 <img src='https://user-images.githubusercontent.com/21227322/31186462-b4bfc6ea-a8fc-11e7-8e5a-89d6530ef596.png' alt='RSpectacle logo' title='rspectacle' align='right' />
 
-<img
-src="http://daynin.github.io/clojurescript-presentation/img/react-logo.png" alt='react shit />
 
+![react-logo](https://user-images.githubusercontent.com/21227322/31187159-01c8d592-a8ff-11e7-9386-af708a7ae9de.png)
+
+![websocketslogo](https://user-images.githubusercontent.com/21227322/31187345-a085530e-a8ff-11e7-848f-1e17e1c0f2d6.png)
+
+![800px-redis_logo svg](https://user-images.githubusercontent.com/21227322/31187340-9c97f846-a8ff-11e7-9d0b-8566cd8c1070.png)
+
+![rails-9b13de39de9d2eed10a2418734ee1e584cdc9634c04206af1c2bfcc8b0d0e3d5](https://user-images.githubusercontent.com/21227322/31187348-a2a2cca2-a8ff-11e7-835c-e6194e732afb.png)
 ## Collaborators 
 - @heretoeternity
 - @sambok
