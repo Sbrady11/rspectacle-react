@@ -9,12 +9,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Specs
 This project requires the revlevant backend, found [here](https://github.com/OG-Hawks/rspectacle-railsAPI).
 
-  -ActionCable: 5.1.4,
-  -React: 15.6.2,
-  -React-Dom: 15.6.2,
-  -React-Modal: 2.3.2,
-  -React-Scripts: 1.0.14,
-  -React-Skylight: 0.5.0
+  - ActionCable: 5.1.4
+  - React: 15.6.2
+  - React-Dom: 15.6.2
+  - React-Modal: 2.3.2
+  - React-Scripts: 1.0.14
+  - React-Skylight: 0.5.0
 
 ## Installation
 To run locally, download and install the relevant [backend](https://github.com/OG-Hawks/rspectacle-railsAPI)
