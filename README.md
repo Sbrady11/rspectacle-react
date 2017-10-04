@@ -28,4 +28,4 @@ To run locally, download and install the relevant [backend](https://github.com/O
 4. `npm start`
 
 ## User Story
-The user, after logging onto Rspectacle, can write an RSpec test in the left hand entry-field. Once complete, the user clicks 'SUBMIT', and the entry is saved to the backend. Next, the user can write a Ruby method in the right most entry-field that passes the RSpec test. The user clicks the 'SUBMIT' button underneath the relevant field, then selects 'RUN'. The results of the freshly 
+The user, after navigating to the Rspectacle page, can write an RSpec test in the left hand entry-field. Once complete, the user clicks 'SUBMIT', and the entry is saved to the backend. Next, the user can write a Ruby method in the right most entry-field that passes the RSpec test. The user clicks the 'SUBMIT' button underneath the relevant field, then selects 'RUN'. The results of the freshly 
