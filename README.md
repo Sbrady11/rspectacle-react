@@ -1,4 +1,6 @@
+<img src='https://user-images.githubusercontent.com/21227322/31186462-b4bfc6ea-a8fc-11e7-8e5a-89d6530ef596.png' alt='RSpectacle logo' title='rspectacle' align='right' 
 # Rspectacle Front End
+
 
 ## Credits
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
