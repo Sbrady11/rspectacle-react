@@ -1,6 +1,6 @@
-#Rspectacle Front End
+# Rspectacle Front End
 
-##Credits
+## Credits
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 - @heretoeternity
 - @sambok
@@ -18,9 +18,13 @@ This project requires the revlevant backend, found [here] (https://github.com/OG
 ## Installation
 To run locally, download and install the relevant [backend](https://github.com/OG-Hawks/rspectacle-railsAPI)
 
-1. `npm install`
+1. `git clone https://github.com/OG-Hawks/rspectacle-react`
 
-2. `npm start`
+2. `cd rspectacle-react`
+
+3. `npm install`
+
+4. `npm start`
 
 ## User Story
-The user, after logging onto Rspectacle, can write an RSpec test in the left hand entry-field. Once complete, the user clicks 'SUBMIT', and the entry is saved to the backend. Next, the user can write a Ruby method in the right most entry-field that passes the RSpec test. The user clicks the 'SUBMIT' button underneath the relevant field, then selects 'RUN'. The results of the freshly created RSpec test are then displayed to the console, along with the relevant passing or failing messages. In order to write a new test, simply resubmit the relevant fields. The session is not restricted to one user. Two users can easily write and share tests and code using RSpectacle. 
+The user, after logging onto Rspectacle, can write an RSpec test in the left hand entry-field. Once complete, the user clicks 'SUBMIT', and the entry is saved to the backend. Next, the user can write a Ruby method in the right most entry-field that passes the RSpec test. The user clicks the 'SUBMIT' button underneath the relevant field, then selects 'RUN'. The results of the freshly 
