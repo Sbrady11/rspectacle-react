@@ -31,7 +31,8 @@ class TestEditorContainer extends React.Component {
           <textarea
             onKeyDown={this.handleTab}
             id='spec-input'
-            onChange={this.onChange}>{ rspecCode }</textarea>
+            onChange={this.onChange}
+            placeholder={ rspecCode }>{ rspecCode }</textarea>
         </div>
         <SubmitButton onSubmit={ createRspecCode } content={ rspecCode } />
       </div>
