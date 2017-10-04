@@ -2,9 +2,9 @@ import React from 'react';
 
 class RunButton extends React.Component {
     constructor(props) {
-            super(props);
-            this.handleClickEvent = this.handleClickEvent.bind(this);
-        }
+        super(props);
+        this.handleClickEvent = this.handleClickEvent.bind(this);
+    }
         // event handler function
         // onClick event
     handleClickEvent(event) {
@@ -13,11 +13,9 @@ class RunButton extends React.Component {
         onClick();
     }
     render() {
-        return ( <
-            button style = {
-                { display: "inline-block" } }
-            onClick = { this.handleClickEvent } >
-            RUN < /button>
+        return (
+           < button style = {{ display: "inline-block" }}
+           onClick = { this.handleClickEvent } > RUN < /button>
         );
     }
 }

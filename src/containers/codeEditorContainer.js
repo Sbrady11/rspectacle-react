@@ -22,7 +22,7 @@ class CodeEditorContainer extends React.Component {
   }
   // rubyCode has to be formatted
   render() {
-    const { rubyCode, createRubyCode } = this.props;
+    const { rubyCode, createRubyCode, buttonStatus, runStatus } = this.props;
     return (
       <div className="display" style={{ border: 'medium', display: "inline-block", padding: "1em", margin: "1em" }}>
         <h2 className="editor"> Code </h2>
@@ -33,7 +33,11 @@ class CodeEditorContainer extends React.Component {
             onKeyDown={this.handleTab}
             placeholder={ rubyCode }>{ rubyCode }</textarea>
         </div>
-        <SubmitButton onSubmit={ createRubyCode } content={ rubyCode }/>
+        <SubmitButton 
+          onSubmit={ createRubyCode } 
+          content={ rubyCode }
+          buttonStatus={ buttonStatus }
+          runStatus={ runStatus }/>
       </div>
     );
   }

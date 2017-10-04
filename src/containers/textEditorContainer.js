@@ -11,18 +11,28 @@ class TextEditorContainer extends React.Component {
             createRubyCode,
             updateRspecCode, 
             updateRubyCode,
-            updateTestResult } = this.props;
+            updateTestResult,
+            buttonStatus,
+            runStatus
+              } = this.props;
     return (
       <div id="textEditor-container">
         <TestEditorContainer
           rspecCode={ rspecCode }
           createRspecCode={ createRspecCode }
-          updateRspecCode={ updateRspecCode } />
-        <RunButton onClick={ updateTestResult }/>
+          updateRspecCode={ updateRspecCode }
+          buttonStatus={ buttonStatus }
+          runStatus={ runStatus } />
+        <RunButton 
+          onClick={ updateTestResult }
+          runStatus= { runStatus }
+          buttonStatus={ buttonStatus } />
         <CodeEditorContainer
           rubyCode={ rubyCode }
           createRubyCode={ createRubyCode }
-          updateRubyCode={ updateRubyCode } />
+          updateRubyCode={ updateRubyCode }
+          buttonStatus={ buttonStatus }
+          runStatus={ runStatus } />
       </div>
     );
   }

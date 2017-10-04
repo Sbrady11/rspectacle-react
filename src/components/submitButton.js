@@ -3,27 +3,22 @@ import React from 'react';
 class SubmitButton extends React.Component {
     constructor(props) {
     super(props);
-    this.state = {
-        label: 'SUBMIT'
-        }      
+    
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.buttonName = this.buttonName.bind(this);
     }
         // event handler function
         // Button onClick event
     handleSubmit(event) {
+        debugger;
         event.preventDefault();
-        const { onSubmit, content } = this.props;
+        const { onSubmit, content, buttonStatus } = this.props;
         onSubmit(content);
     }
 
-    buttonName() {
-        this.setState({label: 'SUBMITTED'});
-    }
-
     render() {
+        const {  runStatus } = this.props
         return ( 
-            <button onClick = { this.handleSubmit, this.buttonName } > {this.state.label} < /button>
+         <button onClick = {this.handleSubmit} > SUBMIT < /button>
         )
     }
 }
