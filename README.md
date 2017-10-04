@@ -7,7 +7,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - @sbrady11
 
 ## Specs
-This project requires the revlevant backend, found [here] (https://github.com/OG-Hawks/rspectacle-railsAPI)
+This project requires the revlevant backend, found [here](https://github.com/OG-Hawks/rspectacle-railsAPI).
+
   -ActionCable: 5.1.4,
   -React: 15.6.2,
   -React-Dom: 15.6.2,
