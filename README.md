@@ -1,10 +1,16 @@
 <img src='https://user-images.githubusercontent.com/21227322/31186462-b4bfc6ea-a8fc-11e7-8e5a-89d6530ef596.png' alt='RSpectacle logo' title='rspectacle' align='right' />
 
-## Credits
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+<img
+src="http://daynin.github.io/clojurescript-presentation/img/react-logo.png" alt='react shit />
+
+## Collaborators 
 - @heretoeternity
 - @sambok
 - @sbrady11
+
+## Resources
+-This project was generated with [Create React App](https://github.com/facebookincubator/create-react-app).
+- 
 
 ## Specs
 This project requires the revlevant backend, found [here](https://github.com/OG-Hawks/rspectacle-railsAPI).
