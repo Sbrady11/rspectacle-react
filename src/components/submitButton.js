@@ -3,7 +3,9 @@ import React from 'react';
 class SubmitButton extends React.Component {
     constructor(props) {
     super(props);
-    
+    this.state = {
+        submissionStatus: 'SUMBIT'
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
     }
         // event handler function
@@ -11,14 +13,33 @@ class SubmitButton extends React.Component {
     handleSubmit(event) {
         debugger;
         event.preventDefault();
-        const { onSubmit, content, buttonStatus } = this.props;
-        onSubmit(content);
+        this.changeButtonValue();
+        // const { onSubmit, content, buttonStatus } = this.props;
+        // onSubmit(content);
     }
 
+    changeButtonValue() {
+        const { runStatus } = this.props;
+        if (runStatus){
+            this.setState({
+                submissionStatus: 'SUBMIT'
+            });
+        } else {
+            this.setState({
+                submissionStatus: 'SUBMITTED'
+            });
+        }
+    }
     render() {
-        const {  runStatus } = this.props
+        let submissionStatus;
+        if (!runStatus){
+            submissionStatus = 'SUBMIT';
+        } else {
+            submissionStatus = 'SUBMIT';
+        }
+        const { runStatus } = this.props
         return ( 
-         <button onClick = {this.handleSubmit} > SUBMIT < /button>
+         <button onClick = {this.handleSubmit}> { this.state.submissionStatus } < /button>
         )
     }
 }
