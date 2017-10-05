@@ -8,14 +8,19 @@
 ![800px-redis_logo svg](https://user-images.githubusercontent.com/21227322/31187340-9c97f846-a8ff-11e7-9d0b-8566cd8c1070.png)
 
 ![rails-9b13de39de9d2eed10a2418734ee1e584cdc9634c04206af1c2bfcc8b0d0e3d5](https://user-images.githubusercontent.com/21227322/31187348-a2a2cca2-a8ff-11e7-835c-e6194e732afb.png)
-## Collaborators 
+
+## RSpectacle
+
+Run RSpec tests with your friends over ActionCable in realtime.
+
+## Team
 - @heretoeternity
 - @sambok
 - @sbrady11
 
 ## Resources
--This project was generated with [Create React App](https://github.com/facebookincubator/create-react-app).
-- 
+- This project was generated with [Create React App](https://github.com/facebookincubator/create-react-app).
+- [Numbered text editor background] (http://i.imgur.com/2cOaJ.png)
 
 ## Specs
 This project requires the revlevant backend, found [here](https://github.com/OG-Hawks/rspectacle-railsAPI).
@@ -39,4 +44,4 @@ To run locally, download and install the relevant [backend](https://github.com/O
 4. `npm start`
 
 ## User Story
-The user, after navigating to the Rspectacle page, can write an RSpec test in the left hand entry-field. Once complete, the user clicks 'SUBMIT', and the entry is saved to the backend. Next, the user can write a Ruby method in the right most entry-field that passes the RSpec test. The user clicks the 'SUBMIT' button underneath the relevant field, then selects 'RUN'. The results of the freshly 
+The user, after navigating to the Rspectacle page, can write an RSpec test in the left hand entry-field. Once complete, the user clicks 'SUBMIT', and the entry is saved to the backend. Next, the user can write a Ruby method in the right most entry-field that passes the RSpec test. The user clicks the 'SUBMIT' button underneath the relevant field, then selects 'RUN'. The results of the test are then displayed to the output console at the bottom of the screen.
