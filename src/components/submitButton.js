@@ -16,7 +16,7 @@ class SubmitButton extends React.Component {
 
     render() {
         return ( 
-            <button onClick = { this.handleSubmit } > "SUBMIT" < /button>
+            <button onClick = { this.handleSubmit } > SUBMIT < /button>
         )
     }
 }
