@@ -13,7 +13,7 @@ class TestEditorContainer extends React.Component {
     const updateRspecCode = this.props.updateRspecCode;
     updateRspecCode(event);
   }
-  // tab??
+
   handleTab(event) {
     if(event.keyCode === 9) {
       event.preventDefault();
@@ -34,7 +34,9 @@ class TestEditorContainer extends React.Component {
             onChange={this.onChange}
             placeholder={ rspecCode }>{ rspecCode }</textarea>
         </div>
-        <SubmitButton onSubmit={ createRspecCode } content={ rspecCode } />
+        <SubmitButton 
+          onSubmit={ createRspecCode } 
+          content={ rspecCode } />
       </div>
     );
   }

@@ -33,7 +33,7 @@ class CodeEditorContainer extends React.Component {
             onKeyDown={this.handleTab}
             placeholder={ rubyCode }>{ rubyCode }</textarea>
         </div>
-        <SubmitButton onSubmit={ createRubyCode } content={ rubyCode }/>
+        <SubmitButton onSubmit={ createRubyCode } content={ rubyCode } />
       </div>
     );
   }
