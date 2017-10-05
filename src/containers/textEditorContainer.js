@@ -18,8 +18,7 @@ class TextEditorContainer extends React.Component {
           rspecCode={ rspecCode }
           createRspecCode={ createRspecCode }
           updateRspecCode={ updateRspecCode } />
-        <RunButton 
-          onClick={ updateTestResult }/>
+        <RunButton onClick={ updateTestResult }/>
         <CodeEditorContainer
           rubyCode={ rubyCode }
           createRubyCode={ createRubyCode }
