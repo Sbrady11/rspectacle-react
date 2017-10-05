@@ -11,8 +11,7 @@ class TextEditorContainer extends React.Component {
             createRubyCode,
             updateRspecCode, 
             updateRubyCode,
-            updateTestResult,
-             } = this.props;
+            updateTestResult } = this.props;
     return (
       <div id="textEditor-container">
         <TestEditorContainer
