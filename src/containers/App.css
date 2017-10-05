@@ -8,7 +8,7 @@
 }
 
 .App-header {
-    height: 150px;
+    height: 100px;
     padding: 20px;
 }
 
@@ -80,6 +80,6 @@ textarea {
     font-family: 'Source Code Pro', monospace, light;
     border-color: #ccc;
     color: green;
-    width: 500px;
-    height: 700px;
+    width: 400px;
+    height: 400px;
 }

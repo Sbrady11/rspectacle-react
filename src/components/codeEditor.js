@@ -1,8 +1,6 @@
 import React from 'react';
 
 class CodeEditor extends React.Component {
-  // event handler functions
-    // Editor(textarea) - enbale tab to add 2 spaces
     
   render(){
     return(

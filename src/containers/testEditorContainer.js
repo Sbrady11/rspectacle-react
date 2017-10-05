@@ -23,7 +23,9 @@ class TestEditorContainer extends React.Component {
 
   // rspecCode has to be formatted
   render() {
-    const { rspecCode, createRspecCode } = this.props;
+    const { rspecCode, 
+            createRspecCode, 
+               } = this.props;
     return (
       <div className="display" style={{ border: 'medium', display: "inline-block", padding: "1em", margin: "1em" }}>
         <h2 className="editor">Test</h2>
@@ -34,7 +36,9 @@ class TestEditorContainer extends React.Component {
             onChange={this.onChange}
             placeholder={ rspecCode }>{ rspecCode }</textarea>
         </div>
-        <SubmitButton onSubmit={ createRspecCode } content={ rspecCode } />
+        <SubmitButton 
+          onSubmit={ createRspecCode } 
+          content={ rspecCode } />
       </div>
     );
   }

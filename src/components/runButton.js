@@ -13,11 +13,8 @@ class RunButton extends React.Component {
         onClick();
     }
     render() {
-        return ( <
-            button style = {
-                { display: "inline-block" } }
-            onClick = { this.handleClickEvent } >
-            RUN < /button>
+        return ( <button style = {{ display: "inline-block" }} 
+        onClick = { this.handleClickEvent } > RUN < /button>
         );
     }
 }
